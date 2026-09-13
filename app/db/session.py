@@ -5,8 +5,14 @@ import os
 load_dotenv()
 DATABASE_NAME = os.getenv("DATABASE_NAME")
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-ADMIN_DATABASE_URL = os.getenv("ADMIN_DATABASE_URL")
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:1234@localhost:5432/ExpenseTrackerMCP",
+)
+ADMIN_DATABASE_URL = os.getenv(
+    "ADMIN_DATABASE_URL",
+    "postgresql+psycopg2://postgres:1234@localhost:5432/postgres",
+)
 
 
 def ensure_database():
