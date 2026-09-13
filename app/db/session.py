@@ -45,7 +45,6 @@ def ensure_database():
         admin_engine.dispose()
 
 
-ensure_database()
 
 engine = create_engine(DATABASE_URL)
 

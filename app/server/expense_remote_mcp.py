@@ -7,7 +7,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 
 from fastmcp import FastMCP
-from app.db.session import SessionLocal, create_tables
+from app.db.session import SessionLocal
 from app.models.expense import Expense
 
 mcp = FastMCP(name="Expense Tracker")
