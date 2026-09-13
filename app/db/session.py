@@ -1,15 +1,12 @@
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import declarative_base, sessionmaker
+from dotenv import load_dotenv
+import os
+load_dotenv()
+DATABASE_NAME = os.getenv("DATABASE_NAME")
 
-DATABASE_NAME = "ExpenseTrackerMCP"
-
-DATABASE_URL = (
-    f"postgresql+psycopg2://postgres:1234@localhost:5432/{DATABASE_NAME}"
-)
-
-ADMIN_DATABASE_URL = (
-    "postgresql+psycopg2://postgres:1234@localhost:5432/postgres"
-)
+DATABASE_URL = os.getenv("DATABASE_URL")
+ADMIN_DATABASE_URL = os.getenv("ADMIN_DATABASE_URL")
 
 
 def ensure_database():

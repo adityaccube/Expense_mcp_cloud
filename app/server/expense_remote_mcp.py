@@ -12,7 +12,6 @@ from app.models.expense import Expense
 
 mcp = FastMCP(name="Expense Tracker")
 
-create_tables()
 
 @mcp.tool
 def add_expense(
